@@ -31,18 +31,18 @@ const Resume = () => {
           </Button>
         </div>
       )}
-      {data.showCursor && <Cursor />}
+      {/* {data.showCursor && <Cursor />} */}
       <div
         className={`container mx-auto mb-10 ${
           data.showCursor && "cursor-none"
         }`}
       >
-        <Header isBlog />
+        <Header />
         {mount && (
           <div className="mt-10 w-full flex flex-col items-center">
             <div
               className={`w-full ${
-                mount && theme.theme === "dark" ? "bg-slate-800" : "bg-gray-50"
+                mount
               } max-w-4xl p-20 mob:p-5 desktop:p-20 rounded-lg shadow-sm`}
             >
               <h1 className="text-3xl font-bold">{name}</h1>
@@ -85,7 +85,7 @@ const Resume = () => {
                 <div className="flex mob:flex-col desktop:flex-row justify-between">
                   {resume.languages && (
                     <div className="mt-2 mob:mt-5">
-                      <h2 className="text-lg">Languages</h2>
+                      <h2 className="text-lg">Programming Languages</h2>
                       <ul className="list-disc">
                         {resume.languages.map((language, index) => (
                           <li key={index} className="ml-5 py-2">
@@ -108,10 +108,11 @@ const Resume = () => {
                       </ul>
                     </div>
                   )}
+                  <br/>
 
                   {resume.others && (
                     <div className="mt-2 mob:mt-5">
-                      <h2 className="text-lg">Others</h2>
+                      <h2 className="text-lg">Web3 Libraries/ Tech Stack</h2>
                       <ul className="list-disc">
                         {resume.others.map((other, index) => (
                           <li key={index} className="ml-5 py-2">
